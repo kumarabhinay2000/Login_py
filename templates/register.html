@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Register - MyLogin {% endblock %}
+{% block content %}
+<h1>Create your account</h1>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <p>
+        <label for="id_username">Username:</label><br>
+        {{ form.username }}
+        {{ form.username.errors }}
+    </p>
+
+    <p>
+        <label for="id_email">Email:</label><br>
+        {{ form.email }}
+        {{ form.email.errors }}
+    </p>
+
+    <p>
+        <label for="id_password1">Password:</label><br>
+        {{ form.password1 }}
+        {{ form.password1.errors }}
+    </p>
+
+    <p>
+        <label for="id_password2">Confirm Password:</label><br>
+        {{ form.password2 }}
+        {{ form.password2.errors }}
+    </p>
+
+    <button type="submit" class="button">Register</button>
+</form>
+
+<p>Already have an account? <a href="/login/">Login</a></p>
+{% endblock %}
