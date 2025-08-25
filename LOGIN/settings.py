@@ -8,7 +8,7 @@ SECRET_KEY = "django-insecure-7w8tc)9%o@bhtl8#*e%eoz2zdb-*qbrz5hbozir3((b@aphw^y
 DEBUG = True  # For production, set False
 
 # Azure domain
-ALLOWED_HOSTS = ['abhinaypython-esagc6hmcmd8b0am.centralindia-01.azurewebsites.net', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['abhinaypython-esagc6hmcmd8b0am.centralindia-01.azurewebsites.net']
 
 INSTALLED_APPS = [
     "django.contrib.admin",

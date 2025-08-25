@@ -2,5 +2,4 @@ Django==5.2.4
 asgiref==3.8.1
 sqlparse==0.5.1
 tzdata==2025.1
-mysqlclient==2.2.4
-gunicorn==21.2.0
+gunicorn==22.1.0
