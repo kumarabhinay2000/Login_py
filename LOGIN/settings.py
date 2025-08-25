@@ -1,12 +1,14 @@
 from pathlib import Path
+import os  # add this for static files and other paths
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-7w8tc)9%o@bhtl8#*e%eoz2zdb-*qbrz5hbozir3((b@aphw^y"
 
-DEBUG = True
+DEBUG = True  # For production, set False
 
-ALLOWED_HOSTS = ['abhinaypython-esagc6hmcmd8b0am.centralindia-01.azurewebsites.net']
+# Azure domain
+ALLOWED_HOSTS = ['abhinaypython-esagc6hmcmd8b0am.centralindia-01.azurewebsites.net', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -67,8 +69,10 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
+# Static files for Azure
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"  # collectstatic will put files here
+STATICFILES_DIRS = [BASE_DIR / 'static']  # optional, if you have static folder
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
