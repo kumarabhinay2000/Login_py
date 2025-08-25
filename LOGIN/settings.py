@@ -1,5 +1,7 @@
 from pathlib import Path
-import os  # add this for static files and other paths
+import os
+import pymysql  # Add this for MySQL support if needed
+pymysql.install_as_MySQLdb()  # Optional if you switch to MySQL later
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -49,7 +51,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "LOGIN.wsgi.application"
 
-# Use SQLite for Azure deployment
+# Database: SQLite for Azure deployment (simplest)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -72,7 +74,7 @@ USE_TZ = True
 # Static files for Azure
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"  # collectstatic will put files here
-STATICFILES_DIRS = [BASE_DIR / 'static']  # optional, if you have static folder
+STATICFILES_DIRS = [BASE_DIR / 'static']  # optional, if you have a static folder
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
